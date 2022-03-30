@@ -22,3 +22,4 @@ func _on_Player_area_entered(area):
 		emit_signal('grabbed_key')
 	if area.type == 'star':
 		emit_signal('win')
+

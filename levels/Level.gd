@@ -4,16 +4,20 @@ export (PackedScene) var Enemy
 export (PackedScene) var Pickup
 
 onready var items = $Items
-var doors = []
+var red_doors = []
+var green_doors = []
 
 
 func _ready():
 	randomize()
 	$Items.hide()
 	set_camera_limits()
-	var door_id = $Walls.tile_set.find_tile_by_name('door_red')
-	for cell in $Walls.get_used_cells_by_id(door_id):
-		doors.append(cell)
+	var red_door_id = $Walls.tile_set.find_tile_by_name('door_red')
+	for cell in $Walls.get_used_cells_by_id(red_door_id):
+		red_doors.append(cell)
+	var green_door_id = $Walls.tile_set.find_tile_by_name('door_green')
+	for cell in $Walls.get_used_cells_by_id(green_door_id):
+		green_doors.append(cell)
 	spawn_items()
 	$Player.connect('dead', self, 'game_over')
 	$Player.connect('grabbed_key', self, '_on_Player_grabbed_key')
@@ -43,7 +47,7 @@ func spawn_items():
 			'player_spawn':
 				$Player.position = pos
 				$Player.tile_size = items.cell_size
-			'coin', 'key_red', 'star':
+			'coin', 'key_red', 'key_green', 'star':
 				var item = Pickup.instance()
 				item.init(type, pos)
 				add_child(item)
@@ -56,6 +60,11 @@ func _on_Player_win():
 func game_over():
 	Global.game_over()
 
-func _on_Player_grabbed_key():
-	for cell in doors:
-		$Walls.set_cellv(cell, -1)
+func _on_Player_grabbed_key(key_type):
+	match key_type:
+		'key_red':
+			for cell in red_doors:
+				$Walls.set_cellv(cell, -1)
+		'key_green':
+			for cell in green_doors:
+				$Walls.set_cellv(cell, -1)

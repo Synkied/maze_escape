@@ -1,0 +1,89 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/Unique.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ui/StartScreen.gd" type="Script" id=2]
+[ext_resource path="res://assets/font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://characters/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/star.png" type="Texture" id=6]
+[ext_resource path="res://assets/tileset.tres" type="TileSet" id=7]
+[ext_resource path="res://pickups/Pickup.tscn" type="PackedScene" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 32 )
+
+[node name="StartScreen" type="CanvasLayer"]
+script = ExtResource( 2 )
+Pickup = ExtResource( 8 )
+
+[node name="Ground" type="TileMap" parent="."]
+tile_set = ExtResource( 7 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( -1, 8, 0, -65536, 8, 0, -65535, 8, 0, -65534, 8, 0, -65533, 8, 0, -65532, 8, 0, -65531, 8, 0, -65530, 8, 0, -65529, 8, 0, -65528, 8, 0, -65527, 8, 0, -65526, 8, 0, -65525, 8, 0, -65524, 8, 0, -65523, 8, 0, -65522, 8, 0, -65521, 8, 0, -65520, 8, 0, 65535, 8, 0, 0, 13, 0, 1, 13, 0, 2, 13, 0, 3, 13, 0, 4, 13, 0, 5, 13, 0, 6, 13, 0, 7, 13, 0, 8, 13, 0, 9, 13, 0, 10, 13, 0, 11, 13, 0, 12, 13, 0, 13, 13, 0, 14, 13, 0, 15, 13, 0, 16, 8, 0, 131071, 8, 0, 65536, 13, 0, 65537, 13, 0, 65538, 13, 0, 65539, 13, 0, 65540, 13, 0, 65541, 13, 0, 65542, 13, 0, 65543, 13, 0, 65544, 13, 0, 65545, 13, 0, 65546, 13, 0, 65547, 13, 0, 65548, 13, 0, 65549, 13, 0, 65550, 13, 0, 65551, 13, 0, 65552, 8, 0, 196607, 8, 0, 131072, 13, 0, 131073, 13, 0, 131074, 13, 0, 131075, 13, 0, 131076, 13, 0, 131077, 13, 0, 131078, 13, 0, 131079, 13, 0, 131080, 13, 0, 131081, 13, 0, 131082, 13, 0, 131083, 13, 0, 131084, 13, 0, 131085, 13, 0, 131086, 13, 0, 131087, 13, 0, 131088, 8, 0, 262143, 8, 0, 196608, 13, 0, 196609, 13, 0, 196610, 13, 0, 196611, 13, 0, 196612, 13, 0, 196613, 13, 0, 196614, 13, 0, 196615, 13, 0, 196616, 13, 0, 196617, 13, 0, 196618, 13, 0, 196619, 13, 0, 196620, 13, 0, 196621, 13, 0, 196622, 13, 0, 196623, 13, 0, 196624, 8, 0, 327679, 8, 0, 262144, 13, 0, 262145, 13, 0, 262146, 13, 0, 262147, 13, 0, 262148, 13, 0, 262149, 13, 0, 262150, 13, 0, 262151, 13, 0, 262152, 13, 0, 262153, 13, 0, 262154, 13, 0, 262155, 13, 0, 262156, 13, 0, 262157, 13, 0, 262158, 13, 0, 262159, 13, 0, 262160, 8, 0, 393215, 8, 0, 327680, 13, 0, 327681, 13, 0, 327682, 13, 0, 327683, 13, 0, 327684, 13, 0, 327685, 13, 0, 327686, 13, 0, 327687, 13, 0, 327688, 13, 0, 327689, 13, 0, 327690, 13, 0, 327691, 13, 0, 327692, 13, 0, 327693, 13, 0, 327694, 13, 0, 327695, 13, 0, 327696, 8, 0, 458751, 8, 0, 393216, 13, 0, 393217, 13, 0, 393218, 13, 0, 393219, 13, 0, 393220, 13, 0, 393221, 13, 0, 393222, 13, 0, 393223, 13, 0, 393224, 13, 0, 393225, 13, 0, 393226, 13, 0, 393227, 13, 0, 393228, 13, 0, 393229, 13, 0, 393230, 13, 0, 393231, 13, 0, 393232, 8, 0, 524287, 8, 0, 458752, 13, 0, 458753, 13, 0, 458754, 13, 0, 458755, 13, 0, 458756, 13, 0, 458757, 13, 0, 458758, 13, 0, 458759, 13, 0, 458760, 13, 0, 458761, 13, 0, 458762, 13, 0, 458763, 13, 0, 458764, 13, 0, 458765, 13, 0, 458766, 13, 0, 458767, 13, 0, 458768, 8, 0, 589823, 8, 0, 524288, 13, 0, 524289, 13, 0, 524290, 13, 0, 524291, 13, 0, 524292, 13, 0, 524293, 13, 0, 524294, 13, 0, 524295, 13, 0, 524296, 13, 0, 524297, 13, 0, 524298, 13, 0, 524299, 13, 0, 524300, 13, 0, 524301, 13, 0, 524302, 13, 0, 524303, 13, 0, 524304, 8, 0, 655359, 8, 0, 589824, 13, 0, 589825, 13, 0, 589826, 13, 0, 589827, 13, 0, 589828, 13, 0, 589829, 13, 0, 589830, 13, 0, 589831, 13, 0, 589832, 13, 0, 589833, 13, 0, 589834, 13, 0, 589835, 13, 0, 589836, 13, 0, 589837, 13, 0, 589838, 13, 0, 589839, 13, 0, 589840, 8, 0, 720895, 8, 0, 655360, 8, 0, 655361, 8, 0, 655362, 8, 0, 655363, 8, 0, 655364, 8, 0, 655365, 8, 0, 655366, 8, 0, 655367, 8, 0, 655368, 8, 0, 655369, 8, 0, 655370, 8, 0, 655371, 8, 0, 655372, 8, 0, 655373, 8, 0, 655374, 8, 0, 655375, 8, 0, 655376, 8, 0 )
+
+[node name="Name" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 112.0
+margin_bottom = 186.0
+custom_fonts/font = SubResource( 1 )
+text = "Maze Escape"
+align = 1
+valign = 1
+
+[node name="StartAction" type="Label" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -37.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 1 )
+text = "Press <space>"
+align = 1
+valign = 1
+
+[node name="ScoreNotice" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -204.0
+margin_bottom = -166.0
+custom_fonts/font = ExtResource( 3 )
+align = 1
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -569.0
+margin_top = -417.0
+margin_right = -456.0
+margin_bottom = -314.0
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 1
+
+[node name="Items" type="TileMap" parent="."]
+tile_set = ExtResource( 7 )
+show_collision = true
+format = 1
+tile_data = PoolIntArray( 327681, 11, 0, 393217, 11, 0, 458753, 11, 0, 458754, 11, 0, 458755, 11, 0, 458756, 11, 0, 458757, 11, 0, 458758, 11, 0 )
+
+[node name="Start" type="Area2D" parent="." groups=["start"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start"]
+position = Vector2( 479, 480 )
+shape = SubResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="Start"]
+position = Vector2( 0, 1 )
+tile_set = ExtResource( 7 )
+format = 1
+tile_data = PoolIntArray( 458759, 10, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 97, 286 )

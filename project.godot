@@ -11,6 +11,9 @@ config_version=4
 [application]
 
 config/name="Maze Escape"
+run/main_scene="res://ui/StartScreen.tscn"
+boot_splash/image="res://maze_icon.png"
+boot_splash/bg_color=Color( 0.168627, 0.592157, 0.776471, 1 )
 config/icon="res://icon.png"
 
 [autoload]

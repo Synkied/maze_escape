@@ -5,7 +5,8 @@ signal coin_pickup
 var textures = {
 	'coin': 'res://assets/coin.png',
 	'key_red': 'res://assets/keyRed.png',
-	'start': 'res://assets/star.png',
+	'key_green': 'res://assets/keyGreen.png',
+	'star': 'res://assets/star.png',
 }
 
 var type
@@ -39,6 +40,9 @@ func pickup():
 	match type:
 		'coin':
 			emit_signal('coin_pickup', 1)
+			$CoinPickup.play()
+		'key_red', 'key_green':
+			$KeyPickup.play()
 	$CollisionShape2D.set_deferred('disabled', true)
 	$Tween.start()
 

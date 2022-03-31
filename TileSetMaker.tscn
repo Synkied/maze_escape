@@ -130,3 +130,15 @@ position = Vector2( 32, 32 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 576, 448, 64, 64 )
+
+[node name="wall_brown2" type="Sprite" parent="."]
+position = Vector2( 32, 32 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 576, 448, 64, 64 )
+
+[node name="wall_brown3" type="Sprite" parent="."]
+position = Vector2( 32, 32 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 576, 448, 64, 64 )
